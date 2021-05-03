@@ -7,7 +7,7 @@
   "scripts": {
     "build": "del-cli dist/**/* && webpack --config ./webpack.production.config.js && yarn tsc",
     "prepublishOnly": "yarn test && yarn loki:test && yarn build",
-    "postinstall": "webpack --config ./webpack.production.config.js",
+    "postinstall": "yarn test && yarn loki:test && yarn build",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006 -s ./public",
